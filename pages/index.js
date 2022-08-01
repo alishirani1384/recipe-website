@@ -3,7 +3,6 @@ import RecipeCard from "../components/RecipeCard";
 
 
 export default function Home({ recipes }) {
-  console.log(recipes);
   return (
     <div className="recipe-list">
       {recipes.map((recipe) => {
