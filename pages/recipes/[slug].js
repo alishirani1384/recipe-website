@@ -2,6 +2,7 @@ import { createClient } from "contentful";
 import Image from "next/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Skeleton from "../../components/Skeleton";
+import Head from "next/head";
 
 const client = createClient({
   space: process.env.SPACE_ID,
@@ -16,6 +17,9 @@ export default function RecipeDetail({ recipe }) {
     recipe.fields;
   return (
     <div>
+      <Head>
+        <title>{title}</title>
+      </Head>
       <div className="banner">
         <Image
           src={`https:${featuredImage.fields.file.url}`}

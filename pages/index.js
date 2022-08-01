@@ -1,10 +1,15 @@
 import { createClient } from "contentful";
 import RecipeCard from "../components/RecipeCard";
+import Head from 'next/head';
 
 
 export default function Home({ recipes }) {
+  
   return (
     <div className="recipe-list">
+      <Head>
+        <title>Homepage</title>
+      </Head>
       {recipes.map((recipe) => {
         const { fields, sys } = recipe;
         return (

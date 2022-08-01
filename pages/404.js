@@ -1,6 +1,7 @@
 import Link from "next/link";
 import {useRouter} from 'next/router';
 import { useEffect } from "react";
+import Head from "next/head";
 
 export default function NotFound() {
     const router=useRouter()
@@ -9,7 +10,10 @@ export default function NotFound() {
     },[])
 
     return (
-      <div className="not-found">
+        <div className="not-found">
+            <Head>
+                <title>Page Not Found</title>
+            </Head>
         <h1>404</h1>
         <h2>Ooops! That page cannot be found :(</h2>
         <p>
